@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day, My Love 💙🌹</title>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Nunito:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #a8d8ea;
+  --blue-deep: #5ba4c8;
+  --blue-pale: #e0f4ff;
+  --rose: #e8778a;
+  --rose-deep: #c94f6a;
+  --rose-pale: #fce8ed;
+  --lavender: #d4b8e0;
+  --cream: #fff9fb;
+  --gold: #e8b86d;
+  --ink: #2d2040;
+  --soft: #7a6585;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ── Custom Cursor ── */
+.cursor {
+  width: 20px; height: 20px;
+  position: fixed; pointer-events: none;
+  z-index: 9999; top: 0; left: 0;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  transition: transform 0.1s;
+}
+
+/* ── Floating Hearts Background ── */
+.hearts-bg {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  overflow: hidden;
+}
+.heart-float {
+  position: absolute;
+  animation: floatUp linear infinite;
+  opacity: 0;
+  font-size: 1.2rem;
+  bottom: -10%;
+}
+@keyframes floatUp {
+  0%   { transform: translateY(0) rotate(0deg) scale(0.5); opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.3; }
+  100% { transform: translateY(-110vh) rotate(360deg) scale(1.2); opacity: 0; }
+}
+
+/* ── Nav ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 500;
+  padding: 1rem 2rem;
+  display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+  background: rgba(255,249,251,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(232,119,138,0.15);
+}
+nav a {
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; text-decoration: none;
+  color: var(--rose-deep);
+  padding: 0.3rem 0.8rem; border-radius: 999px;
+  transition: all 0.25s;
+  border: 1.5px solid transparent;
+}
+nav a:hover { background: var(--rose-pale); border-color: var(--rose); }
+
+/* ── Hero ── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; text-align: center;
+  padding: 6rem 2rem 3rem;
+  position: relative;
+  background: linear-gradient(160deg, var(--blue-pale) 0%, var(--rose-pale) 50%, #f5e0f7 100%);
+  overflow: hidden;
+}
+#hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(168,216,234,0.4) 0%, transparent 55%),
+              radial-gradient(ellipse at 80% 30%, rgba(232,119,138,0.3) 0%, transparent 55%),
+              radial-gradient(ellipse at 50% 90%, rgba(212,184,224,0.35) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-deco {
+  position: absolute;
+  font-size: 6rem; opacity: 0.12;
+  animation: gentleSpin 20s linear infinite;
+  pointer-events: none;
+}
+.hero-deco:nth-child(1) { top: 5%; left: 5%; font-size: 8rem; animation-duration: 25s; }
+.hero-deco:nth-child(2) { top: 10%; right: 8%; font-size: 5rem; animation-direction: reverse; }
+.hero-deco:nth-child(3) { bottom: 15%; left: 10%; font-size: 4rem; animation-duration: 30s; }
+.hero-deco:nth-child(4) { bottom: 5%; right: 5%; font-size: 7rem; animation-duration: 22s; animation-direction: reverse; }
+@keyframes gentleSpin {
+  from { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(1.1); }
+  to   { transform: rotate(360deg) scale(1); }
+}
+.hero-tag {
+  display: inline-block;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--rose-deep);
+  background: white; border: 1.5px solid var(--rose);
+  padding: 0.35rem 1.1rem; border-radius: 999px;
+  margin-bottom: 1.5rem; position: relative;
+  animation: popIn 0.8s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes popIn {
+  from { opacity:0; transform: scale(0.5) translateY(20px); }
+  to   { opacity:1; transform: scale(1) translateY(0); }
+}
+.hero-script {
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(4rem, 12vw, 9rem);
+  line-height: 1; color: var(--rose-deep);
+  position: relative;
+  animation: swoopIn 1.2s cubic-bezier(0.34,1.56,0.64,1) 0.3s both;
+  text-shadow: 3px 3px 0 rgba(232,119,138,0.2), 0 0 40px rgba(232,119,138,0.15);
+}
+@keyframes swoopIn {
+  from { opacity:0; transform: translateY(40px) rotate(-5deg); }
+  to   { opacity:1; transform: translateY(0) rotate(0deg); }
+}
+.hero-name {
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  color: var(--blue-deep); margin-top: -0.5rem;
+  animation: swoopIn 1.2s cubic-bezier(0.34,1.56,0.64,1) 0.5s both;
+}
+.hero-sub {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 300; color: var(--soft);
+  max-width: 420px; line-height: 1.7;
+  margin: 1.5rem auto 2.5rem;
+  animation: fadeUp 1s ease 0.8s both;
+}
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(20px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+.hero-btn {
+  display: inline-block;
+  padding: 0.9rem 2.5rem; border-radius: 999px;
+  background: linear-gradient(135deg, var(--rose-deep), var(--blue-deep));
+  color: white; text-decoration: none;
+  font-weight: 800; font-size: 0.95rem; letter-spacing: 0.03em;
+  box-shadow: 0 8px 30px rgba(201,79,106,0.35);
+  transition: all 0.3s;
+  animation: fadeUp 1s ease 1s both;
+  position: relative; overflow: hidden;
+}
+.hero-btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 14px 40px rgba(201,79,106,0.45); }
+.hero-btn::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+.hero-btn:hover::after { opacity: 1; }
+
+.big-heart {
+  font-size: clamp(4rem, 10vw, 7rem);
+  display: block; margin: 0.5rem auto;
+  animation: heartbeat 1.5s ease infinite;
+}
+@keyframes heartbeat {
+  0%,100% { transform: scale(1); }
+  14%      { transform: scale(1.15); }
+  28%      { transform: scale(1); }
+  42%      { transform: scale(1.1); }
+  70%      { transform: scale(1); }
+}
+
+/* ── Section Shell ── */
+section { position: relative; z-index: 1; padding: 5rem 2rem; }
+.section-header { text-align: center; margin-bottom: 3rem; }
+.section-tag {
+  display: inline-block;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--blue-deep);
+  background: var(--blue-pale); border: 1.5px solid var(--blue);
+  padding: 0.3rem 1rem; border-radius: 999px; margin-bottom: 1rem;
+}
+.section-title {
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--rose-deep); line-height: 1.1;
+}
+
+/* ── Memories ── */
+#memories { background: linear-gradient(170deg, var(--rose-pale) 0%, var(--blue-pale) 100%); }
+.memories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+}
+.memory-card {
+  border-radius: 20px; overflow: hidden; background: white;
+  box-shadow: 0 6px 24px rgba(201,79,106,0.12);
+  transition: transform 0.3s, box-shadow 0.3s; position: relative;
+}
+.memory-card:hover { transform: translateY(-6px) rotate(1deg); box-shadow: 0 16px 40px rgba(201,79,106,0.22); }
+.memory-card:nth-child(even):hover { transform: translateY(-6px) rotate(-1deg); }
+.memory-photo {
+  width: 100%; aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--blue-pale), var(--rose-pale));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem; position: relative; overflow: hidden;
+  border-bottom: 3px dashed rgba(232,119,138,0.3);
+}
+.photo-preview { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.memory-body { padding: 1rem 1.25rem 1.25rem; }
+.memory-date {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--blue-deep); margin-bottom: 0.4rem;
+}
+.memory-caption {
+  font-family: 'Lora', serif; font-style: italic;
+  font-size: 0.95rem; line-height: 1.55; color: var(--ink);
+}
+.memory-caption[contenteditable]:focus { outline: 2px solid var(--rose); border-radius: 6px; padding: 4px; }
+.edit-hint { font-size: 0.7rem; color: #999; margin-top: 0.4rem; font-style: italic; }
+
+/* ── Letter ── */
+#letter { background: white; }
+.letter-wrap {
+  max-width: 680px; margin: 0 auto;
+  background: linear-gradient(170deg, var(--cream) 0%, var(--blue-pale) 100%);
+  border-radius: 24px; padding: 3rem 3.5rem;
+  box-shadow: 0 8px 40px rgba(168,216,234,0.3), inset 0 1px 0 rgba(255,255,255,0.8);
+  border: 1px solid rgba(232,119,138,0.15);
+  position: relative; overflow: hidden;
+}
+.letter-wrap::before {
+  content: '💙'; position: absolute; top: -1rem; right: -1rem;
+  font-size: 10rem; opacity: 0.05; transform: rotate(20deg); pointer-events: none;
+}
+.letter-wrap::after {
+  content: '🌹'; position: absolute; bottom: -1rem; left: -1rem;
+  font-size: 10rem; opacity: 0.07; transform: rotate(-15deg); pointer-events: none;
+}
+.letter-dear { font-family: 'Pinyon Script', cursive; font-size: 2.5rem; color: var(--rose-deep); margin-bottom: 1.5rem; }
+.letter-body {
+  font-family: 'Lora', serif; font-size: 1.05rem; line-height: 1.9;
+  color: var(--ink); white-space: pre-line;
+}
+.letter-body[contenteditable]:focus { outline: 2px dashed var(--rose); border-radius: 8px; padding: 8px; }
+.letter-sign { font-family: 'Pinyon Script', cursive; font-size: 2rem; color: var(--blue-deep); margin-top: 2rem; text-align: right; }
+.letter-hearts { text-align: right; font-size: 1.5rem; margin-top: 0.25rem; animation: heartbeat 2s ease infinite; }
+
+/* ── Quiz ── */
+#quiz { background: linear-gradient(160deg, var(--blue-pale) 0%, #f5e0f7 50%, var(--rose-pale) 100%); }
+.quiz-wrap { max-width: 720px; margin: 0 auto; }
+
+.question-card {
+  background: white; border-radius: 20px; padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 20px rgba(168,216,234,0.2);
+  border: 1px solid rgba(232,119,138,0.1);
+  transition: transform 0.2s;
+}
+.question-card:hover { transform: translateY(-2px); }
+
+/* ── Locked state: no hover lift after submit ── */
+.question-card.locked { pointer-events: none; }
+.question-card.locked:hover { transform: none; }
+
+.question-num {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--rose); margin-bottom: 0.6rem;
+}
+.question-text {
+  font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 1.25rem; line-height: 1.5;
+}
+.options { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+.opt-btn {
+  padding: 0.55rem 1.2rem; border-radius: 999px;
+  border: 2px solid #e8d8e4; background: transparent;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem; font-weight: 600;
+  cursor: pointer; color: var(--ink);
+  transition: all 0.25s;
+}
+.opt-btn:hover { border-color: var(--rose); background: var(--rose-pale); transform: scale(1.03); }
+
+/* Selected — user picked this one */
+.opt-btn.selected {
+  border-color: var(--rose-deep);
+  background: linear-gradient(135deg, var(--rose-pale), var(--blue-pale));
+  color: var(--rose-deep);
+}
+
+/* After submit — correct answer always shown green */
+.opt-btn.correct {
+  border-color: #4caf50 !important;
+  background: #e8f5e9 !important;
+  color: #2e7d32 !important;
+  transform: none;
+}
+
+/* After submit — wrong choice shown red */
+.opt-btn.wrong {
+  border-color: #ef5350 !important;
+  background: #ffebee !important;
+  color: #c62828 !important;
+  transform: none;
+}
+
+/* Progress indicator */
+.quiz-progress {
+  text-align: center;
+  font-size: 0.82rem; color: var(--soft);
+  margin-bottom: 1.5rem; font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.progress-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.5rem; }
+.progress-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #ddd; transition: background 0.4s;
+}
+.progress-dot.answered { background: var(--rose); }
+.progress-dot.correct  { background: #4caf50; }
+.progress-dot.wrong    { background: #ef5350; }
+
+.quiz-submit-wrap { text-align: center; margin-top: 1.5rem; }
+.quiz-btn {
+  padding: 0.85rem 3rem; border-radius: 999px; border: none;
+  background: linear-gradient(135deg, var(--rose-deep), var(--blue-deep));
+  color: white; font-family: 'Nunito', sans-serif;
+  font-size: 1rem; font-weight: 800; cursor: pointer;
+  box-shadow: 0 6px 24px rgba(201,79,106,0.3); transition: all 0.3s;
+}
+.quiz-btn:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 10px 32px rgba(201,79,106,0.4); }
+.quiz-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* Warning message */
+.quiz-warning {
+  display: none; text-align: center;
+  color: var(--rose-deep); font-size: 0.88rem; font-weight: 700;
+  margin-top: 0.75rem;
+  animation: shake 0.4s ease;
+}
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%      { transform: translateX(-6px); }
+  75%      { transform: translateX(6px); }
+}
+.quiz-warning.show { display: block; }
+
+/* Result box */
+.result-box {
+  background: linear-gradient(135deg, var(--rose-pale), var(--blue-pale));
+  border: 2px solid var(--rose); border-radius: 20px; padding: 2.5rem;
+  text-align: center; margin-top: 2rem;
+  display: none;
+  animation: popIn 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+.result-box h3 {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 2.8rem; color: var(--rose-deep); margin-bottom: 0.5rem;
+}
+.result-box p { font-family: 'Lora', serif; font-style: italic; color: var(--soft); line-height: 1.6; }
+.result-score { font-size: 3.5rem; margin: 0.5rem 0; }
+.result-breakdown {
+  display: flex; justify-content: center; gap: 0.5rem;
+  flex-wrap: wrap; margin: 1rem 0 0.5rem;
+}
+.breakdown-chip {
+  font-size: 0.78rem; font-weight: 700; padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+}
+.chip-correct { background: #e8f5e9; color: #2e7d32; }
+.chip-wrong   { background: #ffebee; color: #c62828; }
+
+.retry-btn {
+  margin-top: 1.25rem;
+  display: inline-block; padding: 0.6rem 1.8rem;
+  border-radius: 999px; border: 2px solid var(--rose-deep);
+  background: transparent; color: var(--rose-deep);
+  font-family: 'Nunito', sans-serif; font-size: 0.88rem;
+  font-weight: 700; cursor: pointer; transition: all 0.25s;
+}
+.retry-btn:hover { background: var(--rose-pale); transform: scale(1.03); }
+
+/* ── Footer ── */
+footer {
+  background: var(--ink); color: var(--cream);
+  text-align: center; padding: 3rem 2rem;
+  position: relative; overflow: hidden;
+}
+footer::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(168,216,234,0.08) 0%, transparent 70%);
+}
+.footer-script { font-family: 'Pinyon Script', cursive; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--rose); position: relative; }
+.footer-sub { font-size: 0.85rem; opacity: 0.45; margin-top: 0.5rem; font-weight: 300; }
+.footer-hearts { font-size: 2rem; margin-top: 1rem; letter-spacing: 0.5rem; }
+
+/* ── Scroll Reveal ── */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  nav { gap: 0.5rem; }
+  .letter-wrap { padding: 2rem 1.5rem; }
+  .memories-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor">💙</div>
+
+<!-- Floating Hearts -->
+<div class="hearts-bg" id="heartsBg"></div>
+
+<!-- Nav -->
+<nav>
+  <a href="#hero">💙 Home</a>
+  <a href="#memories">📸 Memories</a>
+  <a href="#letter">💌 Letter</a>
+  <a href="#quiz">💝 Quiz</a>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-deco">🌹</div>
+  <div class="hero-deco">💙</div>
+  <div class="hero-deco">🌹</div>
+  <div class="hero-deco">💙</div>
+  <span class="hero-tag">💌 February 14 · Happy Valentine's Day</span>
+  <span class="big-heart">💙</span>
+  <h1 class="hero-script">Happy Valentine's</h1>
+  <p class="hero-name">my dearest husband</p>
+  <p class="hero-sub">Every day with you is a gift I never want to stop unwrapping. This little corner of the internet is all yours — made with all my love. 🌹</p>
+  <a href="#memories" class="hero-btn">Enter our world 💙🌹</a>
+</section>
+
+<!-- Memories -->
+<section id="memories">
+  <div class="section-header reveal">
+    <span class="section-tag">📸 Our Story</span>
+    <h2 class="section-title">Memories I Treasure</h2>
+  </div>
+
+  <div class="memories-grid">
+
+    <div class="memory-card reveal">
+      <div class="memory-photo">
+        <img class="photo-preview" src="./day met.jpeg" alt="The day we met" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span style="display:none;font-size:4rem;align-items:center;justify-content:center;width:100%;height:100%">🌅</span>
+      </div>
+      <div class="memory-body">
+        <div class="memory-date">The day we fell in love 🌅</div>
+        <div class="memory-caption" contenteditable="true">The moment I saw you, I knew my life was about to change forever. You smiled and my heart skipped every beat it had.</div>
+        <div class="edit-hint">📍 St Vincentipol Hospital (Hide and Seek) ✏️ Click caption to edit</div>
+      </div>
+    </div>
+
+    <div class="memory-card reveal">
+      <div class="memory-photo">
+        <img class="photo-preview" src="./Wedding pic.png" alt="Wedding day" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span style="display:none;font-size:4rem;align-items:center;justify-content:center;width:100%;height:100%">💍</span>
+      </div>
+      <div class="memory-body">
+        <div class="memory-date">Our wedding day 💍</div>
+        <div class="memory-caption" contenteditable="true">I said yes a thousand times that day before you even asked. Nothing has ever felt more right than promising forever to you.</div>
+        <div class="edit-hint">✏️ Click caption to edit</div>
+      </div>
+    </div>
+
+    <div class="memory-card reveal">
+      <div class="memory-photo">
+        <img class="photo-preview" src="./adventure.jpeg" alt="First adventure" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span style="display:none;font-size:4rem;align-items:center;justify-content:center;width:100%;height:100%">✈️</span>
+      </div>
+      <div class="memory-body">
+        <div class="memory-date">Our first adventure ✈️</div>
+        <div class="memory-caption" contenteditable="true">Getting wonderfully lost with you is still my favourite thing. Every map led us somewhere unexpected and magical.</div>
+        <div class="edit-hint">✈️ COK → DXB ✏️ Click caption to edit</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Love Letter -->
+<section id="letter">
+  <div class="section-header reveal">
+    <span class="section-tag">💌 From My Heart</span>
+    <h2 class="section-title">A Letter For You</h2>
+  </div>
+
+  <div class="letter-wrap reveal">
+    <div class="letter-dear">My dearest love,</div>
+    <div class="letter-body" contenteditable="true">On this Valentine's Day, I find myself sitting here trying to find the right words for everything you mean to me — and every time, the words fall a little short.
+
+You are the calm in my chaos, the laughter in my hardest days, and the warmth in every ordinary Tuesday. You are the reason I believe in love not just as a feeling, but as a choice — one I make every single morning when I open my eyes and see you there.
+
+I love you in the way you don't notice: the way you hum when you cook, the way you always leave the light on for me, the way you reach for my hand without even thinking. Those small things are not small to me. They are everything.
+
+Thank you for choosing me, every day, in every season. Thank you for the adventures we've shared, the storms we've weathered, and all the joy that still stretches ahead of us.
+
+Today and every day — you are my favourite person in the entire world. My heart picked you, and it will keep picking you, for all the years we have left to collect.
+
+With every piece of my heart,</div>
+    <div class="letter-sign">Your wife 🌹</div>
+    <div class="letter-hearts">💙🌹💙🌹💙</div>
+  </div>
+  <p style="text-align:center;color:#bbb;font-size:0.78rem;margin-top:1rem;font-style:italic">✏️ Click the letter to personalise it</p>
+</section>
+
+<!-- Quiz -->
+<section id="quiz">
+  <div class="section-header reveal">
+    <span class="section-tag">💝 How Well Do You Know Me?</span>
+    <h2 class="section-title">Our Love Quiz</h2>
+    <p style="color:var(--soft);font-size:0.9rem;margin-top:0.5rem;font-style:italic">Answer all 5 questions, then hit submit to see your score! 😄</p>
+  </div>
+
+  <div class="quiz-wrap">
+
+    <!-- Progress tracker -->
+    <div class="quiz-progress reveal">
+      <span id="progressText">0 of 5 answered</span>
+      <div class="progress-dots">
+        <div class="progress-dot" id="dot-0"></div>
+        <div class="progress-dot" id="dot-1"></div>
+        <div class="progress-dot" id="dot-2"></div>
+        <div class="progress-dot" id="dot-3"></div>
+        <div class="progress-dot" id="dot-4"></div>
+      </div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-card reveal" data-qindex="0" data-answer="c">
+      <div class="question-num">Question 1 of 5</div>
+      <div class="question-text">What is my absolute favourite thing we do together?</div>
+      <div class="options">
+        <button class="opt-btn" data-val="a">Going out to restaurants 🍽️</button>
+        <button class="opt-btn" data-val="b">Cozy nights in 🛋️</button>
+        <button class="opt-btn" data-val="c">Praising God together ☺️</button>
+        <button class="opt-btn" data-val="d">Weekend adventures 🌄</button>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-card reveal" data-qindex="1" data-answer="d">
+      <div class="question-num">Question 2 of 5</div>
+      <div class="question-text">What is the first thing I notice when I look at you?</div>
+      <div class="options">
+        <button class="opt-btn" data-val="a">Your eyes 👀</button>
+        <button class="opt-btn" data-val="b">Your hands 🤝</button>
+        <button class="opt-btn" data-val="c">Your smile 😊</button>
+        <button class="opt-btn" data-val="d">Your hair 💇</button>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-card reveal" data-qindex="2" data-answer="a">
+      <div class="question-num">Question 3 of 5</div>
+      <div class="question-text">What makes me fall in love with you all over again, every single time?</div>
+      <div class="options">
+        <button class="opt-btn" data-val="a">The way you take care of me 💛</button>
+        <button class="opt-btn" data-val="b">Your cooking skills 🍳</button>
+        <button class="opt-btn" data-val="c">How funny you are 😂</button>
+        <button class="opt-btn" data-val="d">How handsome you look 😍</button>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-card reveal" data-qindex="3" data-answer="a">
+      <div class="question-num">Question 4 of 5</div>
+      <div class="question-text">What is my favourite memory of us?</div>
+      <div class="options">
+        <button class="opt-btn" data-val="a">Vagamon trip 🏔️</button>
+        <button class="opt-btn" data-val="b">Global Village trip 🌍</button>
+        <button class="opt-btn" data-val="c">Velanganni trip 🕊️</button>
+        <button class="opt-btn" data-val="d">Our wedding day 💍</button>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="question-card reveal" data-qindex="4" data-answer="b">
+      <div class="question-num">Question 5 of 5</div>
+      <div class="question-text">How many times a day do I think of you?</div>
+      <div class="options">
+        <button class="opt-btn" data-val="a">A few times ☺️</button>
+        <button class="opt-btn" data-val="b">All. The. Time. 💙</button>
+        <button class="opt-btn" data-val="c">Only when I miss you 💌</button>
+        <button class="opt-btn" data-val="d">Only at night 🌙</button>
+      </div>
+    </div>
+
+    <div class="quiz-submit-wrap reveal">
+      <button class="quiz-btn" id="quizSubmit">See Your Results 💝</button>
+      <div class="quiz-warning" id="quizWarning">⚠️ Please answer all 5 questions first, my love!</div>
+    </div>
+
+    <!-- Result box -->
+    <div class="result-box" id="resultBox">
+      <h3 id="resultTitle"></h3>
+      <div class="result-score" id="resultScore"></div>
+      <div class="result-breakdown" id="resultBreakdown"></div>
+      <p id="resultMsg"></p>
+      <button class="retry-btn" id="retryBtn">Try Again 🔄</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p class="footer-script">Always & Forever</p>
+  <p class="footer-sub">Made with every beat of my heart · Valentine's Day 2026</p>
+  <p class="footer-hearts">💙 🌹 💙 🌹 💙</p>
+</footer>
+
+<script>
+// ── Custom Cursor ──
+const cursor = document.getElementById('cursor');
+const cursors = ['💙','🌹','💝','💗','🌹','💙'];
+let ci = 0;
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top  = e.clientY + 'px';
+});
+setInterval(() => {
+  ci = (ci + 1) % cursors.length;
+  cursor.textContent = cursors[ci];
+}, 1500);
+
+// ── Floating Hearts ──
+const hbg = document.getElementById('heartsBg');
+const hEmojis = ['💙','🌹','💝','🌸','💗','✨','🩵','🌺'];
+function spawnHeart() {
+  const h = document.createElement('div');
+  h.className = 'heart-float';
+  h.textContent = hEmojis[Math.floor(Math.random() * hEmojis.length)];
+  h.style.left = Math.random() * 100 + 'vw';
+  h.style.fontSize = (0.8 + Math.random() * 1.4) + 'rem';
+  const dur = 8 + Math.random() * 12;
+  h.style.animationDuration = dur + 's';
+  h.style.animationDelay = (Math.random() * 4) + 's';
+  hbg.appendChild(h);
+  setTimeout(() => h.remove(), (dur + 5) * 1000);
+}
+for (let i = 0; i < 20; i++) setTimeout(spawnHeart, i * 400);
+setInterval(spawnHeart, 600);
+
+// ── Scroll Reveal ──
+const reveals = document.querySelectorAll('.reveal');
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), 80);
+      ro.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => ro.observe(r));
+
+// ────────────────────────────────────────────
+// ── QUIZ LOGIC ──
+// ────────────────────────────────────────────
+
+const cards        = document.querySelectorAll('.question-card');
+const submitBtn    = document.getElementById('quizSubmit');
+const warningEl    = document.getElementById('quizWarning');
+const resultBox    = document.getElementById('resultBox');
+const resultTitle  = document.getElementById('resultTitle');
+const resultScore  = document.getElementById('resultScore');
+const resultBreak  = document.getElementById('resultBreakdown');
+const resultMsg    = document.getElementById('resultMsg');
+const retryBtn     = document.getElementById('retryBtn');
+const progressText = document.getElementById('progressText');
+
+// Track which questions have been answered
+const answered = {}; // { qindex: selectedVal }
+
+// Step 1 — Attach click listeners to every option button
+cards.forEach(card => {
+  const qindex = parseInt(card.dataset.qindex);
+  card.querySelectorAll('.opt-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (card.classList.contains('locked')) return; // ignore clicks after submit
+
+      // Deselect all in this card first
+      card.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
+      // Select clicked
+      btn.classList.add('selected');
+      // Record answer
+      answered[qindex] = btn.dataset.val;
+      // Update progress UI
+      updateProgress();
+    });
+  });
+});
+
+// Step 2 — Update progress dots and text
+function updateProgress() {
+  const count = Object.keys(answered).length;
+  progressText.textContent = count + ' of 5 answered';
+  for (let i = 0; i < 5; i++) {
+    const dot = document.getElementById('dot-' + i);
+    dot.classList.toggle('answered', answered[i] !== undefined);
+  }
+}
+
+// Step 3 — Submit button
+submitBtn.addEventListener('click', () => {
+  // Validate all answered
+  if (Object.keys(answered).length < 5) {
+    warningEl.classList.add('show');
+    // Shake unanswered cards
+    cards.forEach(card => {
+      const idx = parseInt(card.dataset.qindex);
+      if (answered[idx] === undefined) {
+        card.style.borderColor = 'var(--rose-deep)';
+        card.style.boxShadow = '0 0 0 3px rgba(201,79,106,0.2)';
+        setTimeout(() => {
+          card.style.borderColor = '';
+          card.style.boxShadow = '';
+        }, 1500);
+      }
+    });
+    return;
+  }
+
+  warningEl.classList.remove('show');
+
+  // Score and reveal answers
+  let correct = 0;
+  const breakdownHtml = [];
+
+  cards.forEach(card => {
+    const qindex     = parseInt(card.dataset.qindex);
+    const rightAns   = card.dataset.answer;
+    const userAns    = answered[qindex];
+    const isCorrect  = userAns === rightAns;
+
+    if (isCorrect) correct++;
+
+    // Style the chosen button
+    card.querySelectorAll('.opt-btn').forEach(btn => {
+      if (btn.dataset.val === rightAns) {
+        btn.classList.add('correct');   // always highlight correct answer green
+      } else if (btn.dataset.val === userAns && !isCorrect) {
+        btn.classList.add('wrong');     // highlight wrong choice red
+      }
+    });
+
+    // Lock the card
+    card.classList.add('locked');
+
+    // Build breakdown chip
+    breakdownHtml.push(
+      `<span class="breakdown-chip ${isCorrect ? 'chip-correct' : 'chip-wrong'}">Q${qindex + 1}: ${isCorrect ? '✓ Correct' : '✗ Wrong'}</span>`
+    );
+
+    // Update progress dot to correct/wrong
+    const dot = document.getElementById('dot-' + qindex);
+    dot.classList.remove('answered');
+    dot.classList.add(isCorrect ? 'correct' : 'wrong');
+  });
+
+  // Disable submit button
+  submitBtn.disabled = true;
+
+  // Show result
+  resultScore.textContent = correct + ' / 5 ' + (correct === 5 ? '🏆' : correct >= 3 ? '💝' : '💙');
+  resultBreak.innerHTML = breakdownHtml.join('');
+
+  if (correct === 5) {
+    resultTitle.textContent = 'My Perfect Person 🌹';
+    resultMsg.textContent   = 'You know me better than I know myself. That is exactly why I married you. You are my everything. 🌹💙';
+  } else if (correct === 4) {
+    resultTitle.textContent = 'So close! 💝';
+    resultMsg.textContent   = 'Almost perfect — just like you. The one you missed? That is our excuse for another long chat tonight. 💙';
+  } else if (correct === 3) {
+    resultTitle.textContent = 'Pretty good, love! 😊';
+    resultMsg.textContent   = 'You know me so well — and the parts you do not yet? That is what the rest of our life is for. 🌹';
+  } else if (correct === 2) {
+    resultTitle.textContent = 'Time for more dates! 😄';
+    resultMsg.textContent   = 'You still have a lot to learn — lucky for you, I plan on being around forever to teach you. 💙🌹';
+  } else {
+    resultTitle.textContent = 'My mysterious husband! 🤭';
+    resultMsg.textContent   = 'You might not know every answer, but you know how to make my heart full. That is all I need. 💙';
+  }
+
+  resultBox.style.display = 'block';
+  resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+});
+
+// Step 4 — Retry button: full reset
+retryBtn.addEventListener('click', () => {
+  // Clear all selections and locks
+  cards.forEach(card => {
+    card.classList.remove('locked');
+    card.style.borderColor = '';
+    card.style.boxShadow   = '';
+    card.querySelectorAll('.opt-btn').forEach(btn => {
+      btn.classList.remove('selected', 'correct', 'wrong');
+    });
+  });
+
+  // Reset answered tracker
+  for (const key in answered) delete answered[key];
+
+  // Reset progress
+  progressText.textContent = '0 of 5 answered';
+  for (let i = 0; i < 5; i++) {
+    const dot = document.getElementById('dot-' + i);
+    dot.className = 'progress-dot';
+  }
+
+  // Reset result box and button
+  resultBox.style.display = 'none';
+  submitBtn.disabled = false;
+  warningEl.classList.remove('show');
+
+  // Scroll back to quiz top
+  document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+</body>
+</html>
